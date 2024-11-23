@@ -1,0 +1,188 @@
+ersion: '3.9'
+
+services:
+
+  MicroserviceSubscription:
+    image: microservicesubscription_img
+    build: ./Sarra./MicroserviceSubscription
+    container_name: subscription
+    ports:
+      - "8082:8082"
+    environment:
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://eurekaserver:8761/eureka
+      - SPRING_DATASOURCE_URL=jdbc:mysql://MySQL:3306/MicroserviceSubscription?createDatabaseIfNotExist=true
+      - SPRING_DATASOURCE_USERNAME=root
+      - SPRING_DATASOURCE_PASSWORD=root
+    depends_on:
+      - eurekaserver
+      - MySQL
+
+  courses:
+    build : ./Yasmine./MicroServiceProject
+    image: course
+    container_name: course-container
+    ports:
+      - "8077:8077"
+    environment:
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://eurekaserver:8761/eureka
+    depends_on:
+      - eurekaserver
+
+  MicroserviceReclamation:
+    image: microservicereclamation_img
+    build: ./Haithem./MicroServiceProject
+    container_name: reclamation
+    ports:
+      - "8076:8076"
+    environment:
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://eurekaserver:8761/eureka
+      - SPRING_DATASOURCE_URL=jdbc:mysql://MySQL:3306/MicroService?createDatabaseIfNotExist=true
+      - SPRING_DATASOURCE_USERNAME=root
+      - SPRING_DATASOURCE_PASSWORD=root
+    depends_on:
+      - eurekaserver
+      - MySQL
+
+  pistes:
+    build : ./MicroServiceProject
+    image: piste
+    container_name: piste-container
+    ports:
+      - "8075:8075"
+    environment:
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://eurekaserver:8761/eureka/
+    depends_on:
+      - eurekaserver
+
+
+  MicroserviceEquipement:
+    image: microserviceequipement_img
+    build: ./Teymour./MicroServiceteymour
+    container_name: equipement
+    ports:
+      - "8074:8074"
+    environment:
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://eurekaserver:8761/eureka
+      - SPRING_DATASOURCE_URL=jdbc:mysql://MySQL:3306/MicroService?createDatabaseIfNotExist=true
+      - SPRING_DATASOURCE_USERNAME=root
+      - SPRING_DATASOURCE_PASSWORD=root
+    depends_on:
+      - eurekaserver
+      - MySQL
+
+  eurekaserver:
+    build:
+      context: ./ErekaServer
+      dockerfile: Dockerfile
+    image: eureka
+    container_name: eureka-container
+    ports:
+      - "8761:8761"
+    environment:
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://eurekaserver:8761/eureka/
+
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: pgadmin_container
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@admin.com
+      PGADMIN_DEFAULT_PASSWORD: admin
+    ports:
+      - "5050:80"
+    depends_on:
+      - POSTGRES
+    volumes:
+      - ./pgadmin_servers.json:/pgadmin4/servers.json
+    restart: unless-stopped
+
+  api-gateway:
+    build: ./APIGateway
+    image: gateway
+    container_name: gateway-container
+    ports:
+      - "8090:8090"
+    environment:
+      - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://eurekaserver:8761/eureka/
+      - KEYCLOAK_URL=http://172.18.0.4:8080
+      - KEYCLOAK_REALM=StationSki
+      - KEYCLOAK_CLIENT_ID=APIGateway
+      - KEYCLOAK_CLIENT_SECRET=QOYUSXn21bYLRtReeMWbW2z5Mt9R7UvG
+    depends_on:
+      - eurekaserver
+      - pistes
+      - MicroserviceReclamation
+      - courses
+      - MicroserviceSubscription
+      - MicroserviceEnCommun
+      - keycloak
+      - MicroserviceEquipement
+  
+  MySQL:
+    image: "mysql:5.6"
+    container_name: mysql
+    ports:
+      - "3307:3306"
+    restart: unless-stopped
+   
+    environment:
+    - MYSQL_ROOT_PASSWORD=root
+    volumes:
+    - mysql-data:/var/lib/mysql
+
+  MicroserviceEnCommun:
+    build: ./MSCommon
+    image: microserviceencommun
+    container_name: microserviceencommun
+    ports:
+      - "5000:5000"
+    depends_on:
+      - eurekaserver
+      - POSTGRES
+    environment:
+      - EUREKA_SERVER_URL=http://eurekaserver:8761/eureka
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://POSTGRES:5432/postgres
+      - SPRING_DATASOURCE_USERNAME=postgres
+      - SPRING_DATASOURCE_PASSWORD=admin
+      - KEYCLOAK_URL=http://172.18.0.4:8080
+      - KEYCLOAK_REALM=StationSki
+      - KEYCLOAK_CLIENT_ID=APIGateway
+      - KEYCLOAK_CLIENT_SECRET=QOYUSXn21bYLRtReeMWbW2z5Mt9R7UvG
+
+
+  angular-app:
+    build: ./AngularMS
+    image: angular
+    container_name: angular
+    ports:
+      - "4200:80"
+  keycloak:
+    image: quay.io/keycloak/keycloak:23.0.0
+    container_name: keycloak
+    command: "start-dev"
+    restart: unless-stopped
+    environment:
+      - KEYCLOAK_ADMIN=admin
+      - KEYCLOAK_ADMIN_PASSWORD=admin
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./keycloak-data/h2:/opt/keycloak/data/h2
+
+  POSTGRES:
+    image: "postgres:latest"
+    container_name: db-postgres
+    ports:
+      - "5432:5432"
+    restart: unless-stopped
+    environment:
+      - POSTGRES_PASSWORD=admin
+      - POSTGRES_DB=postgres
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:
+  keycloak-data:
+    driver: local
+  mysql-data:
+    driver: local

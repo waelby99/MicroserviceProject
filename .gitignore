@@ -1,0 +1,289 @@
+# Ignore AngularMS directory and its contents
+AngularMS/*
+
+# But include specific files/folders
+!AngularMS/.gitignore
+!AngularMS/package.json
+!AngularMS/package-lock.json
+!AngularMS/angular.json
+!AngularMS/tsconfig.json
+!AngularMS/tsconfig.app.json
+!AngularMS/tsconfig.spec.json
+!AngularMS/src/
+!AngularMS/node_modules/
+
+# Compiled output
+AngularMS/dist/
+AngularMS/tmp/
+AngularMS/out-tsc/
+AngularMS/bazel-out/
+
+# Node
+AngularMS/node_modules/
+AngularMS/npm-debug.log
+AngularMS/yarn-error.log
+
+# IDEs and editors
+AngularMS/.idea/
+AngularMS/.project
+AngularMS/.classpath
+AngularMS/.c9/
+AngularMS/*.launch
+AngularMS/.settings/
+AngularMS/*.sublime-workspace
+
+# Visual Studio Code
+AngularMS/.vscode/*
+!AngularMS/.vscode/settings.json
+!AngularMS/.vscode/tasks.json
+!AngularMS/.vscode/launch.json
+!AngularMS/.vscode/extensions.json
+AngularMS/.history/*
+
+# Miscellaneous
+AngularMS/.angular/cache/
+AngularMS/.sass-cache/
+AngularMS/connect.lock
+AngularMS/coverage/
+AngularMS/libpeerconnection.log
+AngularMS/testem.log
+AngularMS/typings/
+
+# System files
+AngularMS/.DS_Store
+AngularMS/Thumbs.db
+
+
+# Ignore APIGateway specific files/folders
+APIGateway/target/
+APIGateway/.mvn/wrapper/maven-wrapper.jar
+!APIGateway/**/src/main/**/target/
+!APIGateway/**/src/test/**/target/
+
+# STS (Spring Tool Suite) specific files
+APIGateway/.apt_generated
+APIGateway/.classpath
+APIGateway/.factorypath
+APIGateway/.project
+APIGateway/.settings
+APIGateway/.springBeans
+APIGateway/.sts4-cache
+
+# IntelliJ IDEA specific files
+APIGateway/.idea/
+APIGateway/*.iws
+APIGateway/*.iml
+APIGateway/*.ipr
+
+# NetBeans specific files
+APIGateway/nbproject/private/
+APIGateway/nbbuild/
+APIGateway/dist/
+APIGateway/nbdist/
+APIGateway/.nb-gradle/
+APIGateway/build/
+!APIGateway/**/src/main/**/build/
+!APIGateway/**/src/test/**/build/
+
+# Visual Studio Code specific files
+APIGateway/.vscode/
+
+# Ignore the target directory and build files for ErekaServer
+ErekaServer/target/
+ErekaServer/.mvn/wrapper/maven-wrapper.jar
+!ErekaServer/**/src/main/**/target/
+!ErekaServer/**/src/test/**/target/
+
+# STS (Spring Tool Suite) specific files for ErekaServer
+ErekaServer/.apt_generated
+ErekaServer/.classpath
+ErekaServer/.factorypath
+ErekaServer/.project
+ErekaServer/.settings
+ErekaServer/.springBeans
+ErekaServer/.sts4-cache
+
+# IntelliJ IDEA specific files for ErekaServer
+ErekaServer/.idea/
+ErekaServer/*.iws
+ErekaServer/*.iml
+ErekaServer/*.ipr
+
+# NetBeans specific files for ErekaServer
+ErekaServer/nbproject/private/
+ErekaServer/nbbuild/
+ErekaServer/dist/
+ErekaServer/nbdist/
+ErekaServer/.nb-gradle/
+ErekaServer/build/
+!ErekaServer/**/src/main/**/build/
+!ErekaServer/**/src/test/**/build/
+
+# Visual Studio Code specific files for ErekaServer
+ErekaServer/.vscode/
+
+keycloak-data
+
+# Ignore the target directory and build files for all sub-projects
+MicroServiceProject/*/target/
+MicroServiceProject/*/.mvn/wrapper/maven-wrapper.jar
+!MicroServiceProject/*/**/src/main/**/target/
+!MicroServiceProject/*/**/src/test/**/target/
+
+# STS (Spring Tool Suite) specific files for all sub-projects
+MicroServiceProject/*/.apt_generated
+MicroServiceProject/*/.classpath
+MicroServiceProject/*/.factorypath
+MicroServiceProject/*/.project
+MicroServiceProject/*/.settings
+MicroServiceProject/*/.springBeans
+MicroServiceProject/*/.sts4-cache
+
+# IntelliJ IDEA specific files for all sub-projects
+MicroServiceProject/*/.idea/
+MicroServiceProject/*/*.iws
+MicroServiceProject/*/*.iml
+MicroServiceProject/*/*.ipr
+
+# NetBeans specific files for all sub-projects
+MicroServiceProject/*/nbproject/private/
+MicroServiceProject/*/nbbuild/
+MicroServiceProject/*/dist/
+MicroServiceProject/*/nbdist/
+MicroServiceProject/*/.nb-gradle/
+MicroServiceProject/*/build/
+!MicroServiceProject/*/**/src/main/**/build/
+!MicroServiceProject/*/**/src/test/**/build/
+
+# Visual Studio Code specific files for all sub-projects
+MicroServiceProject/*/.vscode/
+
+# Ignore all node_modules directories in the project
+MicroServiceProject/*/node_modules/
+
+# Ignore all logs files across the project
+MicroServiceProject/*.log
+
+MSCommon/node_modules
+
+# Ignore the target directory and build files for all sub-projects
+Sarra/MicroserviceSubscription/*/target/
+Sarra/MicroserviceSubscription/*/.mvn/wrapper/maven-wrapper.jar
+!Sarra/MicroserviceSubscription/*/**/src/main/**/target/
+!Sarra/MicroserviceSubscription/*/**/src/test/**/target/
+
+# STS (Spring Tool Suite) specific files for all sub-projects
+Sarra/MicroserviceSubscription/*/.apt_generated
+Sarra/MicroserviceSubscription/*/.classpath
+Sarra/MicroserviceSubscription/*/.factorypath
+Sarra/MicroserviceSubscription/*/.project
+Sarra/MicroserviceSubscription/*/.settings
+Sarra/MicroserviceSubscription/*/.springBeans
+Sarra/MicroserviceSubscription/*/.sts4-cache
+
+# IntelliJ IDEA specific files for all sub-projects
+Sarra/MicroserviceSubscription/*/.idea/
+Sarra/MicroserviceSubscription/*/*.iws
+Sarra/MicroserviceSubscription/*/*.iml
+Sarra/MicroserviceSubscription/*/*.ipr
+
+# NetBeans specific files for all sub-projects
+Sarra/MicroserviceSubscription/*/nbproject/private/
+Sarra/MicroserviceSubscription/*/nbbuild/
+Sarra/MicroserviceSubscription/*/dist/
+Sarra/MicroserviceSubscription/*/nbdist/
+Sarra/MicroserviceSubscription/*/.nb-gradle/
+Sarra/MicroserviceSubscription/*/build/
+!Sarra/MicroserviceSubscription/*/**/src/main/**/build/
+!Sarra/MicroserviceSubscription/*/**/src/test/**/build/
+
+# Visual Studio Code specific files for all sub-projects
+Sarra/MicroserviceSubscription/*/.vscode/
+
+# Ignore all node_modules directories in the project
+Sarra/MicroserviceSubscription/*/node_modules/
+
+# Ignore all logs files across the project
+Sarra/MicroserviceSubscription/*.log
+
+# Ignore the target directory and build files for all sub-projects
+Teymour/MicroService/*/target/
+Teymour/MicroService/*/.mvn/wrapper/maven-wrapper.jar
+!Teymour/MicroService/*/**/src/main/**/target/
+!Teymour/MicroService/*/**/src/test/**/target/
+
+# STS (Spring Tool Suite) specific files for all sub-projects
+Teymour/MicroService/*/.apt_generated
+Teymour/MicroService/*/.classpath
+Teymour/MicroService/*/.factorypath
+Teymour/MicroService/*/.project
+Teymour/MicroService/*/.settings
+Teymour/MicroService/*/.springBeans
+Teymour/MicroService/*/.sts4-cache
+
+# IntelliJ IDEA specific files for all sub-projects
+Teymour/MicroService/*/.idea/
+Teymour/MicroService/*/*.iws
+Teymour/MicroService/*/*.iml
+Teymour/MicroService/*/*.ipr
+
+# NetBeans specific files for all sub-projects
+Teymour/MicroService/*/nbproject/private/
+Teymour/MicroService/*/nbbuild/
+Teymour/MicroService/*/dist/
+Teymour/MicroService/*/nbdist/
+Teymour/MicroService/*/.nb-gradle/
+Teymour/MicroService/*/build/
+!Teymour/MicroService/*/**/src/main/**/build/
+!Teymour/MicroService/*/**/src/test/**/build/
+
+# Visual Studio Code specific files for all sub-projects
+Teymour/MicroService/*/.vscode/
+
+# Ignore all node_modules directories in the project
+Teymour/MicroService/*/node_modules/
+
+# Ignore all logs files across the project
+Teymour/MicroService/*.log
+
+
+# Ignore the target directory and build files for all sub-projects
+Yasmine/MicroServiceProject/*/target/
+Yasmine/MicroServiceProject/*/.mvn/wrapper/maven-wrapper.jar
+!Yasmine/MicroServiceProject/*/**/src/main/**/target/
+!Yasmine/MicroServiceProject/*/**/src/test/**/target/
+
+# STS (Spring Tool Suite) specific files for all sub-projects
+Yasmine/MicroServiceProject/*/.apt_generated
+Yasmine/MicroServiceProject/*/.classpath
+Yasmine/MicroServiceProject/*/.factorypath
+Yasmine/MicroServiceProject/*/.project
+Yasmine/MicroServiceProject/*/.settings
+Yasmine/MicroServiceProject/*/.springBeans
+Yasmine/MicroServiceProject/*/.sts4-cache
+
+# IntelliJ IDEA specific files for all sub-projects
+Yasmine/MicroServiceProject/*/.idea/
+Yasmine/MicroServiceProject/*/*.iws
+Yasmine/MicroServiceProject/*/*.iml
+Yasmine/MicroServiceProject/*/*.ipr
+
+# NetBeans specific files for all sub-projects
+Yasmine/MicroServiceProject/*/nbproject/private/
+Yasmine/MicroServiceProject/*/nbbuild/
+Yasmine/MicroServiceProject/*/dist/
+Yasmine/MicroServiceProject/*/nbdist/
+Yasmine/MicroServiceProject/*/.nb-gradle/
+Yasmine/MicroServiceProject/*/build/
+!Yasmine/MicroServiceProject/*/**/src/main/**/build/
+!Yasmine/MicroServiceProject/*/**/src/test/**/build/
+
+# Visual Studio Code specific files for all sub-projects
+Yasmine/MicroServiceProject/*/.vscode/
+
+# Ignore all node_modules directories in the project
+Yasmine/MicroServiceProject/*/node_modules/
+
+# Ignore all logs files across the project
+Yasmine/MicroServiceProject/*.log
+
