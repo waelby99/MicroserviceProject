@@ -54,7 +54,7 @@ Ce projet est une application de gestion pour une station de ski. Elle repose su
 
 | Microservice               | Responsable | Langage/Framework | Base de données | Port  |
 |----------------------------|-------------|-------------------|-----------------|-------|
-| **Pistes**                 | Vous        | Spring Boot       | H2              | 8075  |
+| **Pistes**                 | Wael        | Spring Boot       | H2              | 8075  |
 | **Équipements**            | Teymour     | Spring Boot       | MySQL           | 8074  |
 | **Cours**                  | Yasmine     | Spring Boot       | H2              | 8077  |
 | **Réclamations**           | Haithem     | Spring Boot       | MySQL           | 8076  |
