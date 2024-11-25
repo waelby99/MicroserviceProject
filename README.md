@@ -45,9 +45,9 @@ Pour tester les fonctionnalités de sécurité, configurez un **realm Keycloak**
 
 ---
 
-## Diagramme UML
+## Diagramme de classe
 
-![Diagramme UML](./image.png)
+![Diagramme UML](./diagdeclasse.jpg)
 
 ---
 
