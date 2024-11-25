@@ -80,7 +80,33 @@ Pour tester les fonctionnalités de sécurité, configurez un **realm Keycloak**
 
 ### Étape 1 : Cloner le projet
 ```bash
-git clone https://github.com/votre-repo/station-ski.git
+git clone https://github.com/waelby99/MicroserviceProject.git
 cd station-ski
 ```
 ### Étape 2 : Lancer les services avec Docker Compose
+```bash
+docker-compose up --build
+```
+### Étape 3 : Configurer Keycloak (vous pouvez me contacter pour plus d'informations)
+1. Accéder à l'interface d'administration Keycloak : http://localhost:8080
+2. Créer un realm.
+3. Ajouter un client pour l'application.
+4. Configurer les rôles et les utilisateurs
+   
+### Étape 4 : Accéder aux services
+Frontend Angular : http://localhost:4200
+Eureka Server : http://localhost:8761
+API Gateway : http://localhost:8090
+
+---
+## Fichiers et Dossiers Importants
+
+- **/MicroServiceProject** : Microservice pour la gestion des pistes.
+- **/Teymour/MicroServiceteymour** : Microservice pour la gestion des équipements.
+- **/Yasmine/MicroServiceProject** : Microservice pour la gestion des cours.
+- **/Haithem/MicroServiceProject** : Microservice pour la gestion des réclamations.
+- **/Sarra/MicroserviceSubscription** : Microservice pour la gestion des abonnements.
+- **/MSCommon** : Microservice commun pour les utilisateurs.
+- **/AngularMS** : Application frontend Angular.
+
+
