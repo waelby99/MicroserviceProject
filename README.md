@@ -24,9 +24,9 @@ Ce projet est une application de gestion pour une station de ski. Elle repose su
 - **Frontend :**
   - Angular
 - **Base de données :**
-  - MySQL (Pistes, Réclamations, Abonnements, Équipements)
+  - MySQL ( Réclamations, Abonnements, Équipements)
   - PostgreSQL (Utilisateurs)
-  - H2 (Pistes et Cours en mode embarqué pour tests)
+  - H2 (Pistes et Cours)
 - **Découverte de services :** Eureka Server
 - **API Gateway :** Spring Cloud Gateway
 - **Authentification et sécurité :** Keycloak
