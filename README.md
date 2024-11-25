@@ -66,8 +66,8 @@ Pour tester les fonctionnalités de sécurité, configurez un **realm Keycloak**
 | Microservice               | Responsable | Langage/Framework | Base de données | Port  |
 |----------------------------|-------------|-------------------|-----------------|-------|
 | **Pistes**                 | Wael        | Spring Boot       | H2              | 8075  |
-| **Équipements**            | Teymour     | Spring Boot       | MySQL           | 8074  |
 | **Cours**                  | Yasmine     | Spring Boot       | H2              | 8077  |
+| **Équipements**            | Teymour     | Spring Boot       | MySQL           | 8074  |
 | **Réclamations**           | Haithem     | Spring Boot       | MySQL           | 8076  |
 | **Abonnements**            | Sarra       | Spring Boot       | MySQL           | 8082  |
 | **Utilisateurs (MSCommon)**| Équipe      | Node.js           | PostgreSQL      | 5000  |
