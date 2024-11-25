@@ -82,8 +82,5 @@ Pour tester les fonctionnalités de sécurité, configurez un **realm Keycloak**
 ```bash
 git clone https://github.com/votre-repo/station-ski.git
 cd station-ski
-
----
-
-
+```
 ### Étape 2 : Lancer les services avec Docker Compose
